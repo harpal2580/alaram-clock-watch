@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  body, .wrapper, .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body{
+    padding: 0 10px;
+    min-height: 100vh;
+    /* background: #4A98F7; */
+    /* background: linear-gradient(to right, #d1913c, #ffd194); */
+    /* background: linear-gradient(76deg, rgba(153,164,159,1) 0%, rgba(253,177,45,1) 100%); */
+    background-image: url(https://images.unsplash.com/photo-1620121684840-edffcfc4b878?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .wrapper{
+    width: max-content;
+    padding: 10px 30px 28px;
+    /* background: rgba(255, 255, 255, 0.409); */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    flex-direction: column;
+    color: white;
+    /* box-shadow: 0 10px 25px rgba(0,0,0,0.1); */
+    box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.75);
+    transition: 0.6s;
+  }
+  .wrapper:hover{
+    backdrop-filter: blur(0px);
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.75);
+  }
+  .wrapper img{
+    max-width: 103px;
+  }
+  .wrapper h1{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 1vh 0 4vh 0;
+  }
+  .wrapper .content{
+    /* border: 2px solid red; */
+    width: max-content;
+    justify-content: space-evenly;
+  }
+  .content .column{
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #bfbfbf;
+    margin: 0 3vh;
+    width: calc(100% / 3 - 5px);
+    background-color: rgba(0, 0, 0, 0.457);
+  }
+  .column select{
+    width: max-content;
+    height: 53px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 19px;
+    color: white;
+  }
+  .column select option{
+    background-color: rgba(0, 0, 0, 0.457);
+  }
+  .wrapper button{
+    width: 100%;
+    border: none;
+    outline: none;
+    /* color: #fff; */
+    cursor: pointer;
+    font-size: 4vh;
+    padding: 17px 0;
+    margin-top: 20px;
+    border-radius: 5px;
+    /* font-weight: bolder; */
+    /* background: #4A98F7; */
+    /* background: #1877F2; */
+    /* background-color: #e2bc3e; */
+    background-color: #C0335D;
+    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.75);
+    color: white;
+    transition: 0.6s;
+    /* background: linear-gradient(76deg, rgba(122,120,120,1) 16%, rgba(205,159,78,1) 100%); */
+
+  }
+  .wrapper button:hover{
+    background: rgba(0, 0, 0, 0.573);
+    color: white;
+    border: 2px solid white;
+    font-family: "Comic Neue", cursive;
+    font-weight: 300;
+  }
+
+
+/*   
+  .listAlarm{
+    margin-top: 4vh;
+    border: 3px solid red;
+    width: 40vh;
+    padding: 1vh;
+  }
+  .listAlarm p{
+    border-bottom: 1px solid black;
+    font-size: 3vh;
+  }
+  .listAlarm span{
+    font-size: 3vh;
+    margin-left: 22vh;
+  } */
