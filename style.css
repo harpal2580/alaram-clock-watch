@@ -114,3 +114,14 @@
     font-size: 3vh;
     margin-left: 22vh;
   } */
+
+.alarm-list-section{
+  margin-top:1rem;
+  padding:6px;
+  border: 2px solid #dfdfdf;
+
+}
+li{
+    list-style-type: none;
+    padding:6px;
+  }
