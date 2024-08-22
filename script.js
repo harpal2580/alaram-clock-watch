@@ -125,9 +125,39 @@ function addAlarmList(alarmTime){
 
     const li = document.createElement('li')
     li.innerHTML=`
-         ${alarmTime.hourInput}:${alarmTime.minuteInput}:${alarmTime.secondInput}:${alarmTime.modeInput}
+         ${alarmTime.hourInput}:${alarmTime.minuteInput}:${alarmTime.secondInput} ${alarmTime.modeInput}
         
+         <span class="delete-img" ${alarmTime.id}>
+            <img src="https://cdn-icons-png.flaticon.com/512/3299/3299935.png" class="delete" id="delete" data-id="${alarmTime.id}" width="30" height="30"> 
+         </span>
     `;
     alarmList.append(li)
 
+}
+
+
+
+document.addEventListener('click',function(e){
+    console.log(e.target.id);
+    if(e.target.id == 'delete'){
+      let dataid  = e.target.dataset.id;
+      deleteButton(dataid)
+    }
+})
+
+
+function deleteButton(dataid){
+  const confirmation = confirm("Are you sure you want to delete this record?");
+
+  if(confirmation){
+ 
+    let newAlarmList = alarmListArr.filter(function(alarmTime){
+      return alarmTime.id !== Number(dataid)  
+
+    })
+
+    alarmListArr = newAlarmList;
+    renderList();
+  }
+ 
 }

@@ -1,37 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alarm Clock</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/2b9cdc1c9a.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script src="script.js" defer></script>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alarm Clock</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://kit.fontawesome.com/2b9cdc1c9a.js" crossorigin="anonymous" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
     <div class="wrapper">
-      <img
-        src="https://media1.giphy.com/media/Qvqg5jfITI2Q7e7U0A/giphy.gif?cid=6c09b952vmrcg47m3yjtcapw72dzzpj78uzsioqadwwrdsx9&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s"
-        alt="clock"
-      />
+      <img src="https://media1.giphy.com/media/Qvqg5jfITI2Q7e7U0A/giphy.gif?cid=6c09b952vmrcg47m3yjtcapw72dzzpj78uzsioqadwwrdsx9&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt="clock" />
       <h1 id="clock">00:00:00</h1>
       <div class="content">
         <div class="column">
@@ -58,18 +43,13 @@
         </div>
       </div>
       <button id="btnTime" class="set-alarm-btn">Set Alarm</button>
-      <!-- <div class="listAlarm">
-        <p id="timeList">06:49:01<span id="remove-icon"><i class="fa-solid fa-recycle"></i></span></p>
-      </div> -->
-      <div class="alarm-list-section" id="alarm-list">
-        <ul class="alarm-list">
-            <!----Append the alarm list inside ul-->
-        </ul>
-
-
-   
-   
-  </div>
     </div>
-  </body>
+    <div class="alarm-list-section" id="alarm-list">
+      <ul class="alarm-list">
+        <!-- <li>22:33:44 AM <span>♻️</span></li>
+        <li>22:33:44 AM <span>♻️</span></li> -->
+      </ul>
+    </div>
+  </div>
+</body>
 </html>
