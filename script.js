@@ -1,4 +1,4 @@
-
+ 
 const hourInput = document.getElementById("hours");
 const minuteInput = document.getElementById("minute")
 const secondInput = document.getElementById("second")
