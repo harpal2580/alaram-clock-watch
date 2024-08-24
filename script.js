@@ -6,7 +6,7 @@ const modeInput = document.getElementById("am_pm")
 
 const alarmList = document.getElementById("alarm-list")
 const alarmDiv = document.getElementById("alarm-ringing")
-
+const notification = document.querySelector('.notification')
 const buttonElement = document.querySelector(".set-alarm-btn")
 
 let alarmRingtone = new Audio("./ringtone/alarm.mp3")
@@ -49,29 +49,28 @@ function timeClock() {
 
 
   const date = new Date();  
-  const hour = timeFormat(date.getHours());
-  const minute = timeFormat(date.getMinutes());
-  const min = date.getMinutes()
-  const second = timeFormat(date.getSeconds());
-  const sec = date.getSeconds()
-  const ampm = hour >= 12 ? 'pm' : 'am';
+  let hour = timeFormat(date.getHours());
+  let minute = timeFormat(date.getMinutes());
+  let min = date.getMinutes()
+  let second = timeFormat(date.getSeconds());
+  let sec = date.getSeconds()
+  let ampm = hour >= 12 ? 'pm' : 'am';
   let calculatedHour;
-
   
   if (hour > 12) {
-    
     calculatedHour = hour - 12;
     playAlarm(calculatedHour,hour, minute, min, second, sec, ampm)
-    
   } else if (hour == 0 && ampm == 'am') {
-
-    //playAlarm(hour, minute, min, second, sec, ampm)
+    console.log('night')
+    calculatedHour = 12;
+    playAlarm(calculatedHour,hour, minute, min, second, sec, ampm)
   } else if (hour == 12 && ampm == 'pm') {
-    
-    //playAlarm(hour, minute, min, second, sec, ampm)
+    console.log('afternoon')
+    calculatedHour = 12;
+    playAlarm(calculatedHour,hour, minute, min, second, sec, ampm)
   } else {
-    //playAlarm(hour, minute, min, second, sec, ampm)
-
+      calculatedHour = Number(hour);
+      playAlarm(calculatedHour,hour, minute, min, second, sec, ampm)
   }
 
 }
@@ -79,11 +78,6 @@ function timeClock() {
 setInterval(timeClock, 1000);
 
 
-/**play alarm 
- * 12:10:00 am
- * 12:15:23 am
- * 
-*/
 function playAlarm(calculatedHour,hour, minute, min, second, sec, ampm) {
       for (let i = 0; i < alarmListArr.length; i++) {
         let alarmHour = alarmListArr[i].hourInput
@@ -91,8 +85,8 @@ function playAlarm(calculatedHour,hour, minute, min, second, sec, ampm) {
         let alarmSecond = alarmListArr[i].secondInput
         let alarmMode = alarmListArr[i].modeInput
 
-        console.log(alarmHour,alarmMinute,alarmSecond,alarmMode);
-         console.log(calculatedHour, minute, second, ampm)
+        // console.log(alarmHour,alarmMinute,alarmSecond,alarmMode);
+        //  console.log(calculatedHour, minute, second, ampm)
 
         if((alarmHour == calculatedHour || alarmHour == hour) && 
             (alarmMinute == minute || alarmMinute == min ) && 
@@ -140,6 +134,8 @@ buttonElement.addEventListener('click', function () {
     minuteInput.value = ''
     secondInput.value = ''
     modeInput.value = ''
+
+    showNotification('Alarm set successfully!')
   }
 
 })
@@ -165,17 +161,13 @@ function addAlarmList(alarmTime) {
          </span>
     `;
   alarmList.append(li)
-
 }
-
 
 document.addEventListener('click', function (e) {
   if (e.target.id == 'delete') {
     let dataid = e.target.dataset.id;
     deleteButton(dataid)
   }
-
-  console.log(e.target)
   if(e.target.id == 'alarm-ringing-img'){
         alarmRingtone.pause();
         alarmDiv.style.display='none'
@@ -191,6 +183,21 @@ function deleteButton(dataid) {
     })
     alarmListArr = newAlarmList;
     renderList();
+    showNotification('Alarm deleted successfully!')
   }
 
+}
+
+function showNotification(message){
+
+  notification.style.display="block"
+
+  const div = document.createElement('div')
+  div.classList.add('abc')
+  div.textContent=message
+  notification.append(div)
+
+  setTimeout(() => {
+        notification.style.display="none"
+  }, 3000);
 }
