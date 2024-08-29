@@ -9,7 +9,7 @@ const alarmDiv = document.getElementById("alarm-ringing")
 const notification = document.querySelector('.notification')
 const buttonElement = document.querySelector(".set-alarm-btn")
 
-let alarmRingtone = new Audio("./ringtone/alarm.mp3")
+let alarmRingtone = new Audio("./gta.mp3")
 
 let alarmListArr = [];  // array store added alram data 
 
@@ -135,7 +135,7 @@ buttonElement.addEventListener('click', function () {
     secondInput.value = ''
     modeInput.value = ''
 
-    showNotification('Alarm set successfully!')
+    showNotification('✅ Alarm set successfully!')
   }
 
 })
@@ -183,7 +183,7 @@ function deleteButton(dataid) {
     })
     alarmListArr = newAlarmList;
     renderList();
-    showNotification('Alarm deleted successfully!')
+    showNotification('☑️ Alarm deleted successfully!')
   }
 
 }
@@ -199,5 +199,5 @@ function showNotification(message){
 
   setTimeout(() => {
         notification.style.display="none"
-  }, 3000);
+  }, 300000);
 }
