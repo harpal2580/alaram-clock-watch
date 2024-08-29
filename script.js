@@ -147,11 +147,13 @@ function renderList() {
   alarmList.innerHTML = ''
 
   for (let element of alarmListArr) {
+
     addAlarmList(element)
   }
 }
 
 function addAlarmList(alarmTime) {
+  console.log(alarmTime)
   const li = document.createElement('li')
   li.innerHTML = `
          ${alarmTime.hourInput}:${alarmTime.minuteInput}:${alarmTime.secondInput} ${alarmTime.modeInput}
@@ -191,7 +193,7 @@ function deleteButton(dataid) {
 function showNotification(message){
 
   notification.style.display="block"
-
+  notification.innerHTML='';
   const div = document.createElement('div')
   div.classList.add('abc')
   div.textContent=message
@@ -199,5 +201,5 @@ function showNotification(message){
 
   setTimeout(() => {
         notification.style.display="none"
-  }, 300000);
+  }, 2000);
 }
